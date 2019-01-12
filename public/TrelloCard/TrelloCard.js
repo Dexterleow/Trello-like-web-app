@@ -10,11 +10,10 @@
         }
 
         getCardData(card) {
-                this.render(card);
+            this.render(card);
         }
 
         render(card) {
-            // console.log(card, 'what is card');
             this.shadowRoot.querySelector('.trello-card__title').id = card.id;
             this.shadowRoot.querySelector('.trello-card__title').innerHTML = card.title;
             this.shadowRoot.querySelector('.trello-card__description').innerHTML = card.description;

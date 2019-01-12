@@ -32,12 +32,14 @@ const rowCards = document.querySelector('.row__cards');
                     // console.log(cardList, "is card list obtained?");
 
                     cardList.forEach(card => {
+
+                        var node = this.shadowRoot.querySelector('.trello-column__title')
+
                         if (card.columnId === column.id) {
                             let trelloCard = document.createElement('trello-card');
-                            rowCards.appendChild(trelloCard);
+                            node.appendChild(trelloCard);
                             trelloCard.getCardData(card);
                         }
-
                     });
 
                 })
