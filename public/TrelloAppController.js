@@ -2,7 +2,7 @@
 const rowColumns = document.querySelector('.row__columns');
 
 (function _fetchAndPopulateData(self) {
-    
+
     fetch(`http://localhost:3000/columns`)
         .then((response) => response.text())
         .then((responseText) => {
@@ -21,5 +21,3 @@ const rowColumns = document.querySelector('.row__columns');
             console.error(error);
         });
 })();
-
-
