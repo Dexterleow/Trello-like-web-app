@@ -29,12 +29,15 @@ const rowCards = document.querySelector('.row__cards');
                 .then((responseText) => {
                     const cardList = JSON.parse(responseText);
 
-                    console.log(cardList, "is card list obtained?");
+                    // console.log(cardList, "is card list obtained?");
 
                     cardList.forEach(card => {
+                        if (card.columnId === column.id) {
                             let trelloCard = document.createElement('trello-card');
                             rowCards.appendChild(trelloCard);
-                            trelloCard.getCardData(card, column);
+                            trelloCard.getCardData(card);
+                        }
+
                     });
 
                 })

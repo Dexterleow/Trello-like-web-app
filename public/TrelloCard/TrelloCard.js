@@ -9,11 +9,8 @@
             shadowRoot.appendChild(instance);
         }
 
-        getCardData(card, column) {
-            // if matches column id
-            if (card.columnId === column.id) {
+        getCardData(card) {
                 this.render(card);
-            }
         }
 
         render(card) {
