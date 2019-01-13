@@ -6,7 +6,8 @@
             super();
 
             this.addEventListener('click', e => {
-                this.editCard();
+                // this.editCard();
+                this.toggleDescription();
             });
 
         }
@@ -18,7 +19,7 @@
             shadowRoot.appendChild(instance);
 
             let removeCardButton = this.shadowRoot.querySelector('.trello-card__delete-card');
-            removeCardButton.addEventListener('click', e => this.removeCard()); 
+            removeCardButton.addEventListener('click', e => this.removeCard());
         }
 
         getCardData(card) {
@@ -57,6 +58,13 @@
         removeCard() {
             let cardToBeRemoved = this.shadowRoot.querySelector('.trello-card-container');
             cardToBeRemoved.remove();
+        }
+
+        toggleDescription() {
+            let elem = this.shadowRoot.querySelector('.trello-card__description');
+            if (elem) {
+                elem.style.display = elem.style.display == 'none' ? 'block' : 'none';
+            }
         }
 
     }
