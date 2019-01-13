@@ -29,7 +29,7 @@
             this.shadowRoot.querySelector('.trello-card-container').id = card.id;
             this.shadowRoot.querySelector('.trello-card__title').innerHTML = card.title;
             this.shadowRoot.querySelector('.trello-card__description').innerHTML = card.description;
-            this.shadowRoot.querySelector('.trello-card__columnId').innerHTML = card.columnId;
+            // this.shadowRoot.querySelector('.trello-card__columnId').innerHTML = card.columnId;
         }
 
         removeCard() {
@@ -48,3 +48,11 @@
 
     customElements.define('trello-card', TrelloCard);
 })();
+
+function dragstart_handler(ev) {
+    // Add the drag data
+    console.log(ev.target.innerHTML, "what is my drag");
+    ev.dataTransfer.setData("text/plain", ev.target.innerHTML);
+    // drag 'move' is not working
+    // ev.dataTransfer.dropEffect = 'move';
+}

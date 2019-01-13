@@ -10,7 +10,7 @@
             float: right;
         }
     </style>
-    <div class="trello-card-container">
+    <div class="trello-card-container" draggable="true" ondragstart="dragstart_handler(event);">
         <h2 class="trello-card__title" contenteditable="true"></h2>
         <button class="trello-card__delete-card">Delete Card</button>
         <h4 class="trello-card__description" contenteditable="true"></h4>
