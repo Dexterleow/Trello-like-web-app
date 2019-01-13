@@ -1,0 +1,9 @@
+.trello-app__navbar-search {
+    background: grey;
+    height: 30px;
+}
+
+.trello-app__search {
+    margin: 5px;
+    width: 30%;
+}

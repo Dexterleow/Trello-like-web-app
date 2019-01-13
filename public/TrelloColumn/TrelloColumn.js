@@ -24,13 +24,15 @@ const rowCards = document.querySelector('.row__cards');
             removeColumnButton.addEventListener('click', e => this.removeColumn()); 
         }
 
-        getColumnData(column) {
-            this.render(column);
+        getColumnData(column, userSearchQueryValue) {
+            this.render(column, userSearchQueryValue);
         }
 
-        render(column) {
+        render(column, userSearchQueryValue) {
 
-            fetch(`http://localhost:3000/cards`)
+            console.log("userSearchQuery", userSearchQueryValue);
+
+            fetch(`http://localhost:3000/cards${userSearchQueryValue}`)
                 .then((response) => response.text())
                 .then((responseText) => {
                     const cardList = JSON.parse(responseText);
@@ -46,7 +48,7 @@ const rowCards = document.querySelector('.row__cards');
                         }
 
                     });
-                    
+
                 })
                 .catch((error) => {
                     console.error(error);

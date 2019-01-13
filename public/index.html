@@ -7,11 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trello Like Web App</title>
     <link rel="import" href="./TrelloColumn/TrelloColumn.html">
+    <link rel="stylesheet" type="text/css" href="./TrelloAppController.css">
 </head>
 
 <body>
-
-    <div class="row__columns">
+    <div class="trello-app__navbar-search">
+        <input type="text" placeholder="Press Enter to Search.." name="search" class="trello-app__search" onkeydown="search(this)">
+    </div>
+    <div class="row__columns" id="trello-app__content">
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.14/webcomponents-hi.js"></script>

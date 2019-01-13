@@ -1,8 +1,7 @@
-
 const rowColumns = document.querySelector('.row__columns');
-
-(function _fetchAndPopulateData(self) {
-    const currentDocument = document.currentScript.ownerDocument;
+const currentDocument = document.currentScript.ownerDocument;
+ 
+    function _fetchAndPopulateData(self, userSearchQuery) {
 
     fetch(`http://localhost:3000/columns`)
         .then((response) => response.text())
@@ -13,11 +12,12 @@ const rowColumns = document.querySelector('.row__columns');
 
             var node = currentDocument.querySelector('.row__columns');
 
+            var userSearchQueryValue = userSearchQuery ? userSearchQuery : "";
+
             list.forEach(column => {
-                // console.log(column, "rendering column??");
                 let trelloColumn = document.createElement('trello-column');
                 rowColumns.appendChild(trelloColumn);
-                trelloColumn.getColumnData(column);
+                trelloColumn.getColumnData(column, userSearchQueryValue);
             });
 
             function _addButtonColumn() {
@@ -28,8 +28,8 @@ const rowColumns = document.querySelector('.row__columns');
                     let trelloColumn = document.createElement('trello-column');
                     var object = { title: "New Column" };
                     rowColumns.insertBefore(trelloColumn, addColumnButton);
-                    trelloColumn.getColumnData(object);
-               
+                    trelloColumn.getColumnData(object, userSearchQueryValue);
+
                 }
 
                 return addColumnButton;
@@ -42,4 +42,18 @@ const rowColumns = document.querySelector('.row__columns');
         .catch((error) => {
             console.error(error);
         });
-})();
+}
+_fetchAndPopulateData();
+
+function search(ele) {
+    if (event.key === 'Enter') {
+
+        var userSearchQuery = "?q=" + ele.value;
+
+        var trelloAppContent=document.getElementById("trello-app__content");  
+        trelloAppContent.innerHTML = "";
+
+        _fetchAndPopulateData(this, userSearchQuery);
+    }
+}
+
