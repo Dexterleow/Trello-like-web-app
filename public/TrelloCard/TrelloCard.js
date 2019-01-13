@@ -34,7 +34,17 @@
 
         editCard() {
 
-    
+            // console.log(this.shadowRoot.querySelector('.trello-card__title'), "card title")
+            // var editCard = this.shadowRoot.querySelector('.trello-card__title');
+
+            // var bbbb = editCard.getAttribute('.trello-card__title');
+            // var att = document.createAttribute("input");
+            // console.log(bbbb, "bbbb");
+            // console.log(att, "att");
+            // editCard.setAttribute(bbbb,att);
+            // // var edit2 = editCard.setAttribute('class','info');
+            // console.log(editCard, "shadow edit card");
+            // // console.log(edit2, "shadow edit card2");
 
 
             var editCard = this.shadowRoot.querySelector('.trello-card-container');
