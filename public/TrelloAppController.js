@@ -26,7 +26,9 @@ const rowColumns = document.querySelector('.row__columns');
                 addColumnButton.onclick = () => {
 
                     let trelloColumn = document.createElement('trello-column');
+                    var object = { title: "New Column" };
                     rowColumns.insertBefore(trelloColumn, addColumnButton);
+                    trelloColumn.getColumnData(object);
                
                 }
 
