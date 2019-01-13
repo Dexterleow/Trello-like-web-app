@@ -4,13 +4,13 @@
 
 Prerequisites
 
-npm install
+command: npm install
 
 Install Project Dependencies : Mocha Test Framework
 
 ## Start the development server
 
-json-server db.json
+command: json-server db.json
 
 This command serves the app at `http://localhost:3000/` 
 
@@ -18,7 +18,7 @@ This command serves the app at `http://localhost:3000/`
 
 Navigate to test folder
 
-mocha
+command: mocha
 
 This command will run the tests and their outcome at the terminal
 
@@ -71,7 +71,7 @@ After Clicking on Card 5, it will show the description
 
 - search for any keywords presents on one or multiple cards. The view shall update without reloading the whole page
 
-![trello-like-app](/images/trello-card-search.png) 
+![trello-like-app](/images/trello-search.png) 
 
 ### Drag and Drop Trello-Cards (Failed)
 
