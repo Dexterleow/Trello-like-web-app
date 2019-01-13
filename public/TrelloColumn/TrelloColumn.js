@@ -60,10 +60,10 @@ const rowCards = document.querySelector('.row__cards');
 
                 var node = this.shadowRoot.querySelector('.trello-column__title');
                 let trelloCard = document.createElement('trello-card');
-                var object = { title: "New Card", description: "New Card Description"};
+                var object = { title: "New Card", description: "New Card Description" };
                 node.insertBefore(trelloCard, addCardButton);
                 trelloCard.getCardData(object);
-                
+
             }
             return addCardButton;
         }
