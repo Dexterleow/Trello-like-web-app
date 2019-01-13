@@ -57,4 +57,3 @@ function search(ele) {
         _fetchAndPopulateData(this, userSearchQuery);
     }
 }
-
