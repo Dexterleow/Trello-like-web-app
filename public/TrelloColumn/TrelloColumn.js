@@ -46,9 +46,7 @@ const rowCards = document.querySelector('.row__cards');
                         }
 
                     });
-
-                    // let addButtonCard = this._addButtonForNewCard();
-                    // node.appendChild(addButtonCard);
+                    
                 })
                 .catch((error) => {
                     console.error(error);
@@ -58,30 +56,12 @@ const rowCards = document.querySelector('.row__cards');
             this.shadowRoot.querySelector('.trello-column__title').innerHTML = column.title;
         }
 
-        // _addButtonForNewCard() {
-
-        //     let addCardButton = currentDocument.createElement('button');
-        //     addCardButton.innerHTML = "Add New Card";
-        //     addCardButton.onclick = () => {
-
-        //         var node = this.shadowRoot.querySelector('.trello-column__title');
-        //         let trelloCard = document.createElement('trello-card');
-        //         var object = { title: "New Card", description: "New Card Description" };
-        //         node.insertBefore(trelloCard, addCardButton);
-        //         trelloCard.getCardData(object);
-
-        //     }
-        //     return addCardButton;
-        // }
-
         addNewCard() {
-
                 var node = this.shadowRoot.querySelector('.trello-column__title');
                 let trelloCard = document.createElement('trello-card');
                 var object = { title: "New Card", description: "New Card Description" };
                 node.appendChild(trelloCard);
                 trelloCard.getCardData(object);
-
         }
 
         removeColumn() {
