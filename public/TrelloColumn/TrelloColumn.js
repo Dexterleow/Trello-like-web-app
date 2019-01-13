@@ -61,7 +61,8 @@ const rowCards = document.querySelector('.row__cards');
         addNewCard() {
                 var node = this.shadowRoot.querySelector('.trello-column__title');
                 let trelloCard = document.createElement('trello-card');
-                var object = { title: "New Card", description: "New Card Description" };
+                var uniqueIdCard = '(' + 'id-' + Math.random().toString(36).substr(2, 16) + ')';
+                var object = { title: "New Card " + uniqueIdCard, description: "New Card Description" };
                 node.appendChild(trelloCard);
                 trelloCard.getCardData(object);
         }

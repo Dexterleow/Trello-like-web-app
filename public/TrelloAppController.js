@@ -26,7 +26,8 @@ const currentDocument = document.currentScript.ownerDocument;
                 addColumnButton.onclick = () => {
 
                     let trelloColumn = document.createElement('trello-column');
-                    var object = { title: "New Column" };
+                    var uniqueIdColumn = '(' + 'id-' + Math.random().toString(36).substr(2, 16) + ')';
+                    var object = { title: "New Column " + uniqueIdColumn };
                     rowColumns.insertBefore(trelloColumn, addColumnButton);
                     trelloColumn.getColumnData(object, userSearchQueryValue);
 
