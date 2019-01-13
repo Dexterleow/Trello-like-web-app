@@ -16,6 +16,9 @@ const rowCards = document.querySelector('.row__cards');
             const template = currentDocument.querySelector('#trello-column');
             const instance = template.content.cloneNode(true);
             shadowRoot.appendChild(instance);
+
+            let removeColumnButton = this.shadowRoot.querySelector('.trello-column__delete-column');
+            removeColumnButton.addEventListener('click', e => this.removeColumn()); 
         }
 
         getColumnData(column) {
@@ -66,6 +69,11 @@ const rowCards = document.querySelector('.row__cards');
 
             }
             return addCardButton;
+        }
+
+        removeColumn() {
+            let columnToBeRemoved = this.shadowRoot.querySelector('.trello-column-container');
+            columnToBeRemoved.remove();
         }
     }
 

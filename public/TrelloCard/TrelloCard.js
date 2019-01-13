@@ -17,8 +17,8 @@
             const instance = template.content.cloneNode(true);
             shadowRoot.appendChild(instance);
 
-            let removeButton = this.shadowRoot.querySelector('.trello-card__delete-card');
-            removeButton.addEventListener('click', e => this.removeCard()); 
+            let removeCardButton = this.shadowRoot.querySelector('.trello-card__delete-card');
+            removeCardButton.addEventListener('click', e => this.removeCard()); 
         }
 
         getCardData(card) {
@@ -34,10 +34,10 @@
 
         editCard() {
 
-        
+    
+
 
             var editCard = this.shadowRoot.querySelector('.trello-card-container');
-            console.log(editCard, "what is this")
 
             // this.shadowRoot.querySelector('.trello-card__title').innerHTML = "change";
             // this.shadowRoot.querySelector('.trello-card__description').innerHTML = "change";

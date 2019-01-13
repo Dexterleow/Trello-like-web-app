@@ -8,8 +8,15 @@
             top: 10px;
             width: 35%;
         }
+
+        .trello-column__delete-column {
+            color: red;
+        }
     </style>
-    <div class="trello-column__title"></div>
+    <span class="trello-column-container">
+        <div class="trello-column__title"></div>
+        <button class="trello-column__delete-column">Delete Column</button>
+    </span>
 </template>
 
 <link rel="import" href="../TrelloCard/TrelloCard.html">
