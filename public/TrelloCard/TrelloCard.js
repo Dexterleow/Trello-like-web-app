@@ -18,7 +18,6 @@
             this.shadowRoot.querySelector('.trello-card__title').innerHTML = card.title;
             this.shadowRoot.querySelector('.trello-card__description').innerHTML = card.description;
             this.shadowRoot.querySelector('.trello-card__columnId').innerHTML = card.columnId;
-
         }
     }
 

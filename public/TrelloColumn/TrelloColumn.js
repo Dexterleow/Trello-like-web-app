@@ -29,27 +29,43 @@ const rowCards = document.querySelector('.row__cards');
                 .then((responseText) => {
                     const cardList = JSON.parse(responseText);
 
-                    // console.log(cardList, "is card list obtained?");
+                    var node = this.shadowRoot.querySelector('.trello-column__title');
 
                     cardList.forEach(card => {
-
-                        var node = this.shadowRoot.querySelector('.trello-column__title')
 
                         if (card.columnId === column.id) {
                             let trelloCard = document.createElement('trello-card');
                             node.appendChild(trelloCard);
                             trelloCard.getCardData(card);
                         }
+
                     });
 
+                    let addButtonCard = this._addButtonForNewCard(column);
+                    node.appendChild(addButtonCard);
                 })
                 .catch((error) => {
                     console.error(error);
                 });
 
-            // console.log("is rendering trello column working??", column);
             this.shadowRoot.querySelector('.trello-column__title').id = column.id;
             this.shadowRoot.querySelector('.trello-column__title').innerHTML = column.title;
+        }
+
+        _addButtonForNewCard() {
+
+            let addCardButton = currentDocument.createElement('button');
+            addCardButton.innerHTML = "Add New Card";
+            addCardButton.onclick = () => {
+
+                var node = this.shadowRoot.querySelector('.trello-column__title');
+                let trelloCard = document.createElement('trello-card');
+                var object = { title: "New Card", description: "New Card Description"};
+                node.insertBefore(trelloCard, addCardButton);
+                trelloCard.getCardData(object);
+                
+            }
+            return addCardButton;
         }
     }
 
